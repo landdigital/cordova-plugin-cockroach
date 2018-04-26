@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.landdigital.plugin.cockroach"
+        version="0.0.1">
+
+  <name>Cordova Cockroach</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/cockroach.js" target="js/cockroach.js"/>
+
+  <js-module src="www/cockroach.js" name="cockroach">
+    <clobbers target="cockroach" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Cockroach">
+        <param name="android-package" value="com.landdigital.Cockroach"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/Cockroach.java" target-dir="src/com/landdigital/cockroach/"/>
+    <source-file src="src/android/CockroachException.java" target-dir="src/com/landdigital/cockroach/"/>
+  </platform>
+</plugin>

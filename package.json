@@ -1,0 +1,23 @@
+{
+  "name": "com.landdigital.plugin.cockroach",
+  "version": "0.0.1",
+  "description": "Reloads the Cordova application if a crash occurs",
+  "cordova": {
+    "id": "com.landdigital.plugin.cockroach",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.4.0"
+    }
+  ],
+  "author": "Land Digital",
+  "license": "ISC"
+}
