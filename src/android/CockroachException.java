@@ -43,9 +43,11 @@ public class CockroachException implements Thread.UncaughtExceptionHandler {
         mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 1000, pendingIntent);
 
         // Pass the exception back to the default handler we stored.
-        // if (this.defaultExceptionHandler != null) {
-        //     this.defaultExceptionHandler.uncaughtException(thread, throwable);
-        // }
+        // NOTE: this will cause the app to crash! But without it, crashlytics etc
+        // won't be called.
+        if (this.defaultExceptionHandler != null) {
+            this.defaultExceptionHandler.uncaughtException(thread, throwable);
+        }
 
         // Close.
         this.cordova.getActivity().finish();
